@@ -129,8 +129,8 @@ minetest.register_tool("config_tube:controller", {
 		end
 	end,
 	on_place = function(itemstack, placer, pointed_thing)
-		if not pipeworks.may_configure(pos, placer) then return	end
 		local pos = minetest.get_pointed_thing_position(pointed_thing)
+		if not pipeworks.may_configure(pos, placer) then return	end
 		local node = minetest.get_node(pos)
 		if node.name:match("^config_tube:config_tube") then
 			local meta = minetest.get_meta(pos)
